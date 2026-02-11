@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-         // Call the welcome function
+        //Call the welcome function
         DisplayWelcome();
 
         // Get the user's name
