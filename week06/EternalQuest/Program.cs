@@ -4,6 +4,49 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        GoalManager manager = new GoalManager();
+        bool running = true;
+
+        // Creativity: Added Level system and spiritual titles based on score.
+        // User levels up every 1000 points and receives a title.
+
+        while (running)
+        {
+            Console.WriteLine("\nEternal Quest Program");
+            manager.DisplayScore();
+
+            Console.WriteLine("\nMenu Options:");
+            Console.WriteLine("1. Create Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Record Event");
+            Console.WriteLine("4. Save Goals");
+            Console.WriteLine("5. Load Goals");
+            Console.WriteLine("6. Quit");
+
+            Console.Write("Select choice: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    manager.CreateGoal();
+                    break;
+                case "2":
+                    manager.ListGoals();
+                    break;
+                case "3":
+                    manager.RecordEvent();
+                    break;
+                case "4":
+                    manager.SaveGoals("goals.txt");
+                    break;
+                case "5":
+                    manager.LoadGoals("goals.txt");
+                    break;
+                case "6":
+                    running = false;
+                    break;
+            }
+        }
     }
 }
